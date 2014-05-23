@@ -1,9 +1,14 @@
 require 'spec_helper'
-# Rename this file to classname_spec.rb
-# Check other boxen modules for examples
-# or read http://rspec-puppet.com/tutorial/
+
 describe 's3cmd' do
+  let(:facts) do
+    {
+      :boxen_home => '/opt/boxen'
+    }
+  end
+
   it do
-    should contain_anchor('Hello_World')
+    should contain_package('s3cmd')
+    should contain_package('gpg')
   end
 end

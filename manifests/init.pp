@@ -1,4 +1,14 @@
-# This is a placeholder class.
+# Public: Install s3cmd via homebrew
+#
+# Examples
+#
+#   include s3cmd
+
 class s3cmd {
-  anchor { 'Hello_World': }
+  if $::osfamily == 'Darwin' {
+    include homebrew
+  }
+
+  package { 's3cmd': }
+  package { 'gpg': }
 }
